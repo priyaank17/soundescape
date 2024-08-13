@@ -7,7 +7,7 @@ const soundscapes = [
   {
     title: 'Weather and Atmospheric',
     description: 'A calm and peaceful atmosphere of bushland',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Calm_Before_the_Storm.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/calmsound.mp3',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/weather.mp4',
   },
   {

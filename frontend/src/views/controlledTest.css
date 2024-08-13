@@ -1,0 +1,290 @@
+.controlled-environment-test-container {
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Ensures this is above the video */
+}
+
+.background-video {
+  position: fixed; /* Ensure video stays fixed in the background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Puts the video behind everything else */
+  opacity: 0.7;
+}
+
+.hero-container {
+  text-align: center;
+  margin-bottom: 40px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.questionnaire-section {
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.filter-sort-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+.filter-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.sort-button {
+  background: rgba(67, 83, 255, 0.8);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sort-button:hover {
+  background: rgba(0, 212, 255, 0.8);
+}
+
+.beats-section {
+  margin-bottom: 40px;
+}
+
+.beats-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(67, 83, 255, 0.8);
+  padding-bottom: 5px;
+}
+
+.accordion {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.accordion-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.frequency-dropdown {
+  background: rgba(255, 255, 255, 0.2);
+  color: #000;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 18px;
+  color: #fff;
+}
+
+.accordion-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+.accordion-button:hover {
+  color: rgba(0, 212, 255, 0.8);
+}
+
+.accordion-content {
+  padding: 15px;
+  display: none;
+}
+
+.accordion-content.active {
+  display: block;
+}
+
+.waveform-container {
+  width: 100%;
+  height: 100px;
+  margin-top: 20px;
+}
+
+.media-player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.media-player-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.media-player-button:hover {
+  color: rgba(0, 212, 255, 0.8);
+}
+
+.beat-info, .timer {
+  font-size: 16px;
+  color: #ddd;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background: rgba(67, 83, 255, 0.8);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: rgba(0, 212, 255, 0.8);
+}
+
+.waveform {
+  width: 100%;
+  height: 80px;
+  margin-top: 10px;
+}
+
+.accordion-content.active .waveform {
+  display: block;
+}
+
+.accordion-content .waveform {
+  display: none;
+}
+
+.card-carousel {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+.sound-card {
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 250px;
+  max-width: 250px; /* Adjusted size to make the cards smaller */
+  height: 400px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-gif {
+  width: 100%;
+  height: 150px; /* Reduced height */
+  object-fit: cover;
+  border-bottom: 2px solid #444;
+}
+
+.card-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.action-button {
+  margin-top: 10px;
+  width: 100%;
+  background-color: rgba(29, 185, 84, 0.8);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: rgba(30, 215, 96, 0.8);
+}

@@ -1,0 +1,83 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  background-color: rgba(51, 51, 51, 0.6); /* Semi-transparent background */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); /* Optional: Adds a blur effect */
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  color: #ff6600;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.75rem;
+  font-size: 1rem;
+}
+
+.navbar-links .navbar-user {
+  cursor: pointer;
+  color: white;
+}
+
+.navbar-dropdown {
+  position: relative;
+}
+
+.navbar-dropdown-content {
+  position: absolute;
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  right: 0;
+  top: 100%;
+  z-index: 10;
+}
+
+.navbar-dropdown-content a,
+.navbar-dropdown-content .navbar-logout {
+  color: white;
+  padding: 0.5rem 1rem;
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar-dropdown-content .navbar-logout {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.navbar-dropdown-content a:hover,
+.navbar-dropdown-content .navbar-logout:hover {
+  background-color: #ff6600;
+  color: white;
+}
+
+.arrow.down {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  margin-left: 5px;
+}

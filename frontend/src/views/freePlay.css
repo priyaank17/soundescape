@@ -1,0 +1,446 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+.free-play-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #121212;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+}
+
+.free-play-page .header {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(30, 30, 30, 0.9); /* Slight transparency */
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.free-play-page .header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+.free-play-page .hero-section {
+  text-align: center;
+  margin: 120px auto 20px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.free-play-page .hero-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.free-play-page .hero-description {
+  font-size: 1.25rem;
+}
+
+.free-play-page .free-play-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.free-play-page .left-section, 
+.free-play-page .right-section {
+  background-color: rgba(36, 36, 36, 0.8);
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.free-play-page .left-section {
+  flex-basis: 30%;
+  margin-right: 20px;
+}
+
+.free-play-page .right-section {
+  flex-basis: 70%;
+}
+
+.free-play-page .sound-list {
+  max-height: 70vh;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-left: 10px;
+  border-left: 2px solid #00A4EF;
+}
+
+.free-play-page .sound-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: rgba(51, 51, 51, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.free-play-page .sound-item:hover {
+  border-color: #00A4EF;
+}
+
+.free-play-page .sound-info {
+  flex-grow: 1;
+  padding-right: 10px;
+}
+
+.free-play-page .sound-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+}
+
+.free-play-page .sound-info p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #aaaaaa;
+}
+
+.free-play-page .sound-actions {
+  display: flex;
+  align-items: center;
+}
+
+.free-play-page .sound-actions button {
+  background: none;
+  border: 2px solid #00A4EF; /* Thicker and more visible border */
+  color: #ffffff;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0.9;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.free-play-page .sound-actions button:hover {
+  background-color: #00A4EF;
+  color: #ffffff;
+  border-color: #00A4EF;
+  opacity: 1;
+}
+
+.free-play-page .select-button {
+  background: rgba(51, 51, 51, 0.8);
+  border: 2px solid #00A4EF; /* Thicker border for visibility */
+  color: #ffffff;
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.free-play-page .select-button:hover {
+  background-color: rgba(0, 164, 239, 0.8);
+  color: #ffffff;
+  opacity: 1;
+}
+
+/* Accordion Button Styles for Categories and Subcategories */
+.free-play-page .accordion-button {
+  background: rgba(51, 51, 51, 0.8);
+  border: 2px solid #00A4EF;
+  color: #ffffff;
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  opacity: 0.9;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.free-play-page .accordion-button:hover {
+  background-color: rgba(0, 164, 239, 0.8);
+  color: #ffffff;
+  opacity: 1;
+}
+
+.free-play-page .accordion-button .icon {
+  float: right;
+}
+
+.free-play-page .accordion-content {
+  display: none;
+  margin-left: 15px;
+}
+
+.free-play-page .accordion-content.show {
+  display: block;
+  margin-top: 10px;
+  padding-left: 10px;
+  border-left: 2px solid #00A4EF;
+}
+
+/* Adjusted Mix Controls Styling */
+.free-play-page .mix-controls {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.free-play-page .mix-controls .control-button {
+  background-color: #00A4EF;
+  color: #ffffff;
+  border: 2px solid #00A4EF; /* Thicker border */
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+  opacity: 0.9;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.free-play-page .mix-controls .control-button:hover {
+  background-color: #0086CF;
+  border-color: #0086CF;
+  opacity: 1;
+}
+
+.free-play-page .background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* General mix item styling */
+.mix-item {
+  background-color: #1E1E1E;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mix info styling */
+.mix-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.mix-info h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.mix-info p {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  margin: 0;
+}
+
+/* Waveform styling */
+.waveform {
+  height: 80px;
+  margin-top: 10px;
+}
+
+/* Controls styling */
+.mix-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.control-button {
+  background-color: #333333;
+  border: none;
+  border-radius: 50%;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.control-button:hover {
+  background-color: #555555;
+}
+
+/* Panning, Reverb, Volume controls */
+.track-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.track-controls label {
+  font-size: 0.8rem;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.track-controls input[type="range"] {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.track-controls-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.track-controls {
+  display: flex;
+  align-items: center;
+}
+
+.track-controls span {
+  margin: 0 5px;
+}
+
+.track-controls .fa-minus, .track-controls .fa-plus {
+  margin: 0 10px;
+}
+
+/* Reverb Switch Styling */
+.reverb-switch-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reverb-switch-container label {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #00A4EF;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* Volume and Panning Controls with Icons and Labels */
+.track-controls-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.track-controls {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  justify-content: center;
+}
+
+.track-controls label {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.track-controls span {
+  font-size: 0.8rem;
+  color: #aaaaaa;
+  margin: 0 10px;
+}
+
+.track-controls .fa-minus, .track-controls .fa-plus {
+  cursor: pointer;
+  color: #00A4EF;
+}
+
+.track-controls .fa-minus:hover, .track-controls .fa-plus:hover {
+  color: #ffffff;
+}
+
+/* Centered Labels for Panning */
+.panning-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: #aaaaaa;
+}

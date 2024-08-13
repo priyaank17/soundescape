@@ -1,0 +1,48 @@
+{
+  "name": "hard-to-find-leading-swan",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "axios": "^1.7.2",
+    "dangerous-html": "^0.1.13",
+    "framer-motion": "^11.3.19",
+    "react": "^18.3.1",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
+    "react-howler": "^5.2.0",
+    "react-icons": "^5.2.1",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.26.0",
+    "react-scripts": "^5.0.1",
+    "tone": "^15.0.4",
+    "wavesurfer.js": "^7.8.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

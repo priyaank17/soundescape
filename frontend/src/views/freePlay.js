@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FaPlay, FaPause, FaTrashAlt, FaPlus, FaMinus, FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import { DndProvider, useDrag, useDrop } from 'react-dnd';
+import { FaPlay, FaPause, FaPlus, FaMinus, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import WaveSurfer from 'wavesurfer.js';
 import { Howl } from 'howler';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import './freePlay.css';
 
 

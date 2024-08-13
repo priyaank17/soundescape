@@ -5,7 +5,6 @@ import './style.css';
 import Home from './views/home';
 import NotFound from './views/not-found';
 import Login from './views/login';
-import Register from './components/Register';
 import Account from './views/account';
 import ControlledTest from './views/controlledTest';
 import AmbientSoundscapes from './views/ambientSoundscapes';

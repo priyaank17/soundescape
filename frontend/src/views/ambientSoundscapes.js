@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaPlay, FaPause, FaPlus, FaTimes, FaTrashAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import './ambientSoundscapes.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const soundscapes = [
   {

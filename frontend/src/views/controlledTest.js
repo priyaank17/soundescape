@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, useNavigate } from 'react-router-dom';
-import { FaPlay, FaPause, FaPlus, FaSort, FaClock } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaPlay, FaPause, FaSort} from 'react-icons/fa';
 import './controlledTest.css';
 
 const binauralBeats = [

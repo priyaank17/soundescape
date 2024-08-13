@@ -432,7 +432,6 @@ const FreePlay = () => {
   const audioContext = useRef(null);
   const audioRef = useRef(null);
   const audioRefs = useRef([]); // Store individual audio elements and nodes
-  const [isCategoryCollapsed, setIsCategoryCollapsed] = useState({});
 
   useEffect(() => {
     return () => {
@@ -443,21 +442,6 @@ const FreePlay = () => {
     };
   }, [mix]);
 
-  const toggleCategoryCollapse = (categoryIndex) => {
-    setIsCategoryCollapsed((prevState) => ({
-      ...prevState,
-      [categoryIndex]: !prevState[categoryIndex],
-    }));
-  };
-  
-  const [isSubCategoryCollapsed, setIsSubCategoryCollapsed] = useState({});
-  
-  const toggleSubCategoryCollapse = (subCategoryIndex) => {
-    setIsSubCategoryCollapsed((prevState) => ({
-      ...prevState,
-      [subCategoryIndex]: !prevState[subCategoryIndex],
-    }));
-  };
   
 
   const initializeAudioContext = () => {

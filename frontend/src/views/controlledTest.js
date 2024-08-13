@@ -132,21 +132,6 @@ function ControlledEnvironmentTest() {
   const formRef = useRef();
   const audioRef = useRef(null);
 
-  const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // EmailJS service to send form data to your Gmail
-    // emailjs.sendForm('service_bq7jlgt', 'YOUR_TEMPLATE_ID', formRef.current, 'YOUR_USER_ID')
-    //   .then((result) => {
-    //     alert('Form submitted successfully!');
-    //   }, (error) => {
-    //     console.log(error.text);
-    //   });
-  };
 
   const handlePlayPauseBinaural = (track, frequency) => {
     if (!frequency) {

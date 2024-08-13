@@ -4,8 +4,6 @@ import Home from './views/home';
 import './style.css';
 import NotFound from './views/not-found';
 import Login from './views/login';
-import Account from './views/account';
-import Contact from './views/contact';
 import ControlledTest from './views/controlledTest';
 import AmbientSoundscapes from './views/ambientSoundscapes';
 import FreePlay from './views/freePlay';

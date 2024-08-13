@@ -15,7 +15,6 @@ import PreListeningQuestionnaire from './views/PreListeningQuestionnaire';
 import PostListeningQuestionnaire from './views/PostListeningQuestionnaire';
 import PostSoundscapeQuestionnaire from './views/PostSoundscapeQuestionnaire';
 import PlaygroundQuestionnaire from './views/playgroundQuestionnaire';
-import InteractivePage from './views/InteractivePage'; // Import the new component
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -34,7 +33,6 @@ root.render(
       <Route path="/postSoundscapeQuestionnaire" element={<PostSoundscapeQuestionnaire />} />
       <Route path="/freePlay" element={<FreePlay />} />
       <Route path="/playgroundQuestionnaire" element={<PlaygroundQuestionnaire />} />
-      <Route path="/interactive" element={<InteractivePage />} /> 
       <Route path="*" element={<NotFound />} />
     </Routes>
     <Footer4 />

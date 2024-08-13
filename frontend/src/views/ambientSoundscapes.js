@@ -25,7 +25,7 @@ const soundscapes = [
   {
     title: 'Open Landscapes',
     description: 'Serene sounds of a mountain atmosphere',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/soundscapes/Relaxing+Meadow+with+Ambient+Nature+Sounds+Wildflowers+and+Mountain+View+-+8+Hours+%5BTubeRipper.com%5D_5min.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Relaxing+Meadow+with+Ambient+Nature+Sounds+Wildflowers+and+Mountain+View+-+8+Hours+%5BTubeRipper.com%5D_5min.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/openlandscape.mp4',
   },
   {

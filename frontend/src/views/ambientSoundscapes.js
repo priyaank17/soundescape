@@ -7,7 +7,7 @@ const soundscapes = [
   {
     title: 'Weather and Atmospheric',
     description: 'A calm and peaceful atmosphere of bushland',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/soundscapes/Calm+Before+the+Storm+Ambience+(New+Version)+Distant+Thunder+Warm+Balmy+Windy+3+HOURS+%5BTubeRipper.com%5D_5min.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Calm+Before+the+Storm+Ambience+(New+Version)+Distant+Thunder+Warm+Balmy+Windy+3+HOURS+%5BTubeRipper.com%5D_5min.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/weather.mp4',
   },
   {
@@ -19,7 +19,7 @@ const soundscapes = [
   {
     title: 'Night and Calm',
     description: 'Serene sounds of a mountain atmosphere',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/soundscapes/Night+Ambient+Sounds+Cricket+Swamp+Sounds+at+Night+Sleep+and+Relaxation+Meditation+Sounds+%5BTubeRipper.com%5D_5min.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Night+Ambient+Sounds+Cricket+Swamp+Sounds+at+Night+Sleep+and+Relaxation+Meditation+Sounds+%5BTubeRipper.com%5D_5min.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/night.mp4',
   },
   {
@@ -37,7 +37,7 @@ const soundscapes = [
   {
     title: 'Natural Water Environments',
     description: 'Submerged - Ocean Ambient Music Underwater Sounds',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/soundscapes/Submerged+-+Ocean+Ambient+Music+Underwater+Sounds+%5BTubeRipper.com%5D_5min.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Waterfall+Sounds+-+Garden+Pond+Bird+Life+2+hours+%5BTubeRipper.com%5D_5min.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/water.mp4',
   },
   // Add more soundscape objects...

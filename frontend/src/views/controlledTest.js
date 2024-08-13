@@ -24,7 +24,7 @@ const binauralBeats = [
     description: 'Relaxation and calmness', 
     range: [8, 14], 
     filePrefix: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Binaural+beat+folder/', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats005.mp4' 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats4.mp4' 
   },
   { 
     title: 'Beta Waves', 
@@ -71,7 +71,7 @@ const monauralBeats = [
     title: 'Theta Waves', 
     description: 'Meditation and creativity', 
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/monaural+brainwave+states/theta+4hz+monaural+beat.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats005.mp4' 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats4.mp4' 
   },
 ];
 
@@ -92,7 +92,7 @@ const isochronicBeats = [
     title: 'Gamma Waves', 
     description: 'Peak focus and concentration', 
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Gamma_Isochronic_Tone_24bit.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats005.mp4' 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats4.mp4' 
   },
   { 
     title: 'Delta Waves', 
@@ -253,7 +253,7 @@ function ControlledEnvironmentTest() {
         <title>Controlled Environment Test - Unirelax Beats</title>
       </Helmet>
       <video className="background-video" autoPlay loop muted>
-        <source src="/videos/beats4.mp4" type="video/mp4" />
+        <source src="/videos/beats8.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="hero-container">

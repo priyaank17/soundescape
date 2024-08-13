@@ -147,10 +147,13 @@ const AmbientSoundscapes = () => {
       const newAudio = new Audio(file);
       setCurrentFile(file);
   
-      // Wait for user gesture before starting the audio
       newAudio.addEventListener('canplaythrough', () => {
         setIsPlaying(true);
-        newAudio.play();
+        newAudio.play().catch(err => {
+          if (err.name === 'NotAllowedError' || err.name === 'NotSupportedError') {
+            console.error(`Audio playback failed: ${err.message}`);
+          }
+        });
       });
   
       setAudioInstances({ ...audioInstances, [file]: newAudio });
@@ -158,7 +161,11 @@ const AmbientSoundscapes = () => {
       if (isPlaying) {
         audioInstances[file].pause();
       } else {
-        audioInstances[file].play();
+        audioInstances[file].play().catch(err => {
+          if (err.name === 'NotAllowedError' || err.name === 'NotSupportedError') {
+            console.error(`Audio playback failed: ${err.message}`);
+          }
+        });
       }
       setIsPlaying(!isPlaying);
     }

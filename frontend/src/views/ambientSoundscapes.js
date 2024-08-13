@@ -7,7 +7,7 @@ const soundscapes = [
   {
     title: 'Weather and Atmospheric',
     description: 'A calm and peaceful atmosphere of bushland',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Calm+Before+the+Storm+Ambience+(New+Version)+Distant+Thunder+Warm+Balmy+Windy+3+HOURS+%5BTubeRipper.com%5D_5min.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Calm_Before_the_Storm_Ambience_New_Version_Distant_Thunder_Warm_Balmy_Windy_3_HOURS_TubeRipper_5min.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/weather.mp4',
   },
   {
@@ -144,9 +144,20 @@ const AmbientSoundscapes = () => {
 
   const handlePlayPause = (file) => {
     if (currentFile !== file) {
-      const newAudio = new Audio(file);
+      const newAudio = new Audio();
+      const mp3Source = document.createElement('source');
+      mp3Source.src = file.replace('.wav', '.mp3');
+      mp3Source.type = 'audio/mpeg';
+
+      const wavSource = document.createElement('source');
+      wavSource.src = file;
+      wavSource.type = 'audio/wav';
+
+      newAudio.appendChild(mp3Source);
+      newAudio.appendChild(wavSource);
+
       setCurrentFile(file);
-  
+
       newAudio.addEventListener('canplaythrough', () => {
         setIsPlaying(true);
         newAudio.play().catch(err => {
@@ -155,7 +166,7 @@ const AmbientSoundscapes = () => {
           }
         });
       });
-  
+
       setAudioInstances({ ...audioInstances, [file]: newAudio });
     } else {
       if (isPlaying) {
@@ -313,7 +324,7 @@ const AmbientSoundscapes = () => {
           <button className="btn-primary">Start the Form</button>
         </Link>
       </div>
-      </div>
+    </div>
   );
 };
 

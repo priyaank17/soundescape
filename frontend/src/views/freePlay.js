@@ -461,29 +461,28 @@ const FreePlay = () => {
     }
   };
 
-  const createAudioNodes = async (index, file) => {
+  const createAudioNodes = async (index, audioElement) => {
     initializeAudioContext();
-
+  
     try {
-      const audio = new Audio(file);
-      const source = audioContext.current.createMediaElementSource(audio);
+      const source = audioContext.current.createMediaElementSource(audioElement);
       const gainNode = audioContext.current.createGain();
       const pannerNode = audioContext.current.createStereoPanner();
       const convolverNode = audioContext.current.createConvolver();
-
+  
       // Load an impulse response for reverb
       const impulseResponse = await loadImpulseResponse('/sounds/Drum Chamber.wav');
       convolverNode.buffer = impulseResponse;
-
+  
       // Store references to audio nodes for real-time control
       audioRefs.current[index] = {
-        audio,
+        audio: audioElement,
         source,
         gainNode,
         pannerNode,
         convolverNode,
       };
-
+  
       source.connect(gainNode);
       gainNode.connect(pannerNode);
       pannerNode.connect(convolverNode);
@@ -502,13 +501,14 @@ const FreePlay = () => {
         return;
       }
     }
-
+  
     const newTrack = {
       ...sound,
       howl: new Howl({ src: [sound.file] }),
       panValue: 0,
       reverbValue: 0,
       volumeValue: 100,
+      isReverbOn: false, // Initialize the reverb state
       isBaseSound: isBaseSound
     };
     setMix([...mix, newTrack]);
@@ -518,8 +518,9 @@ const FreePlay = () => {
     try {
       if (!isMixPlaying) {
         for (const [index, track] of mix.entries()) {
-          await createAudioNodes(index, track.file);
-          audioRefs.current[index].audio.play();
+          const audio = new Audio(track.file);
+          await createAudioNodes(index, audio);
+          audio.play();
           track.isPlaying = true;
         }
         setIsMixPlaying(true);
@@ -625,19 +626,29 @@ const FreePlay = () => {
 
 
   const toggleReverb = (index) => {
-    const updatedMix = [...mix];
-    const track = updatedMix[index];
-    track.isReverbOn = !track.isReverbOn;
-
-    // Implement reverb toggle logic here, e.g., enable/disable the convolver node
-    const { convolverNode } = audioRefs.current[index];
-    if (track.isReverbOn) {
-      convolverNode.connect(audioRefs.current[index].audioContext.destination);
-    } else {
-      convolverNode.disconnect(audioRefs.current[index].audioContext.destination);
+    try {
+      const updatedMix = [...mix];
+      const track = updatedMix[index];
+  
+      // Check if the track and convolverNode are properly initialized
+      if (track && audioRefs.current[index] && audioRefs.current[index].convolverNode) {
+        track.isReverbOn = !track.isReverbOn;
+  
+        const { convolverNode } = audioRefs.current[index];
+        if (track.isReverbOn) {
+          convolverNode.connect(audioContext.current.destination);
+        } else {
+          convolverNode.disconnect(audioContext.current.destination);
+        }
+  
+        setMix(updatedMix);
+      } else {
+        console.warn(`Track or convolverNode at index ${index} is undefined or not initialized.`);
+      }
+    } catch (error) {
+      console.error("An error occurred while toggling reverb:", error);
+      // Optionally, display a user-friendly message or silently handle the error
     }
-
-    setMix(updatedMix);
   };
 
   // Function to decrease volume

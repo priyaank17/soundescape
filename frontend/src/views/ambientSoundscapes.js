@@ -7,37 +7,37 @@ const soundscapes = [
   {
     title: 'Weather and Atmospheric',
     description: 'A calm and peaceful atmosphere of bushland',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Calm_Before_the_Storm_Ambience_New_Version_Distant_Thunder_Warm_Balmy_Windy_3_HOURS_TubeRipper_5min.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Calm_Before_the_Storm.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/weather.mp4',
   },
   {
     title: 'Forest and Woodland',
     description: 'Serene sounds of a mountain atmosphere',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/soundscapes/Forest+Sounds+Woodland+Ambience+Bird+Song+%5BTubeRipper.com%5D_5min.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Forest+Sounds+Woodland.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/woodland.mp4',
   },
   {
     title: 'Night and Calm',
     description: 'Serene sounds of a mountain atmosphere',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Night+Ambient+Sounds+Cricket+Swamp+Sounds+at+Night+Sleep+and+Relaxation+Meditation+Sounds+%5BTubeRipper.com%5D_5min.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/NightAmbient.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/night.mp4',
   },
   {
     title: 'Open Landscapes',
     description: 'Serene sounds of a mountain atmosphere',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Relaxing+Meadow+with+Ambient+Nature+Sounds+Wildflowers+and+Mountain+View+-+8+Hours+%5BTubeRipper.com%5D_5min.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/RelaxingMeadow.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/openlandscape.mp4',
   },
   {
     title: 'Forest Sounds Woodland Bird',
     description: 'Forest Sounds Woodland Ambience Bird Song',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/soundscapes/Forest+Sounds+Woodland+Ambience+Bird+Song+%5BTubeRipper.com%5D_5min.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/SubmergedOcean.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/forestsound.mp4',
   },
   {
     title: 'Natural Water Environments',
     description: 'Submerged - Ocean Ambient Music Underwater Sounds',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Waterfall+Sounds+-+Garden+Pond+Bird+Life+2+hours+%5BTubeRipper.com%5D_5min.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/WaterfallSounds.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/water.mp4',
   },
   // Add more soundscape objects...
@@ -97,31 +97,31 @@ const simulationBeats = [
   { 
     title: 'Isochronic Alpha Waves', 
     description: 'Relaxation and calmness', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Alpha_Isochronic_Tone_24bit.wav', 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/AlphaIsochronicTone.wav', 
     video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
   },
   { 
     title: 'Isochronic Beta Waves', 
     description: 'Active thinking and focus', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Beta_Isochronic_Tone_24bit.wav', 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/BetaIsochronicTone.wav', 
     video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
   },
   { 
     title: 'Isochronic Gamma Waves', 
     description: 'Peak focus and concentration', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Gamma_Isochronic_Tone_24bit.wav', 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/GammaIsochronicTone.wav', 
     video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
   },
   { 
     title: 'Isochronic Delta Waves', 
     description: 'Deep sleep and relaxation', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Delta_Isochronic_Tone_24bit.wav', 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/DeltaIsochronicTone.wav', 
     video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
   },
   { 
     title: 'Isochronic Theta Waves', 
     description: 'Meditation and creativity', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Theta_Isochronic_Tone_24bit.wav', 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/ThetaIsochronicTone.wav', 
     video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
   },
 ];

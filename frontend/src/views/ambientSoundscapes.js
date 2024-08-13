@@ -136,47 +136,33 @@ const AmbientSoundscapes = () => {
   const [audioInstances, setAudioInstances] = useState({});
 
   useEffect(() => {
-    if (!showMix) {
+    // Clean up audio instances when component unmounts
+    return () => {
       Object.values(audioInstances).forEach(audio => audio.pause());
-      setIsPlaying(false);
-    }
-  }, [showMix]);
+    };
+  }, [audioInstances]);
 
   const handlePlayPause = (file) => {
     if (currentFile !== file) {
-      const newAudio = new Audio();
-      const mp3Source = document.createElement('source');
-      mp3Source.src = file.replace('.wav', '.mp3');
-      mp3Source.type = 'audio/mpeg';
+      // Stop the currently playing audio (if any)
+      if (audioInstances[currentFile]) {
+        audioInstances[currentFile].pause();
+      }
 
-      const wavSource = document.createElement('source');
-      wavSource.src = file;
-      wavSource.type = 'audio/wav';
-
-      newAudio.appendChild(mp3Source);
-      newAudio.appendChild(wavSource);
-
+      // Create a new audio instance for the selected file
+      const newAudio = new Audio(file);
+      newAudio.play();
       setCurrentFile(file);
+      setIsPlaying(true);
 
-      newAudio.addEventListener('canplaythrough', () => {
-        setIsPlaying(true);
-        newAudio.play().catch(err => {
-          if (err.name === 'NotAllowedError' || err.name === 'NotSupportedError') {
-            console.error(`Audio playback failed: ${err.message}`);
-          }
-        });
-      });
-
+      // Update the audio instances with the new one
       setAudioInstances({ ...audioInstances, [file]: newAudio });
     } else {
+      // If the file is already playing, toggle the play/pause state
       if (isPlaying) {
         audioInstances[file].pause();
       } else {
-        audioInstances[file].play().catch(err => {
-          if (err.name === 'NotAllowedError' || err.name === 'NotSupportedError') {
-            console.error(`Audio playback failed: ${err.message}`);
-          }
-        });
+        audioInstances[file].play();
       }
       setIsPlaying(!isPlaying);
     }
@@ -200,13 +186,15 @@ const AmbientSoundscapes = () => {
       Object.values(audioInstances).forEach(audio => audio.pause());
       setIsPlaying(false);
     } else {
-      const newInstances = {};
       mix.forEach(file => {
-        const audio = new Audio(file);
-        audio.play();
-        newInstances[file] = audio;
+        if (audioInstances[file]) {
+          audioInstances[file].play();
+        } else {
+          const newAudio = new Audio(file);
+          newAudio.play();
+          setAudioInstances(prev => ({ ...prev, [file]: newAudio }));
+        }
       });
-      setAudioInstances(newInstances);
       setIsPlaying(true);
     }
   };
@@ -248,7 +236,7 @@ const AmbientSoundscapes = () => {
                     <FaTrashAlt />
                   </button>
                   <button className="action-button" onClick={() => handlePlayPause(file)}>
-                    {isPlaying && currentFile === file ? <FaPause /> : <FaPlay />}
+                    {currentFile === file && isPlaying ? <FaPause /> : <FaPlay />}
                   </button>
                   <input type="range" min="0" max="1" step="0.01" className="volume-slider" />
                 </div>
@@ -267,7 +255,7 @@ const AmbientSoundscapes = () => {
                     <span>{beat.title}</span>
                     <div className="mix-actions">
                       <button className="action-button" onClick={() => handlePlayPause(beat.file)}>
-                        {isPlaying && currentFile === beat.file ? <FaPause /> : <FaPlay />}
+                        {currentFile === beat.file && isPlaying ? <FaPause /> : <FaPlay />}
                       </button>
                       <button className="action-button" onClick={() => handleAddToMix(beat.file)}>
                         <FaPlus />
@@ -316,7 +304,6 @@ const AmbientSoundscapes = () => {
           </div>
         ))}
       </div>
-      {/* Post-Soundscape Listening Questionnaire Section */}
       <div className="questionnaire-section">
         <h2>Post-Listening Ambient Soundscapes Questionnaire</h2>
         <p>Help us understand your state after listening to our ambient soundscapes</p>

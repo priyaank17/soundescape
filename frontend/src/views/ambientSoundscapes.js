@@ -19,7 +19,7 @@ const soundscapes = [
   {
     title: 'Night and Calm',
     description: 'Serene sounds of a mountain atmosphere',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/NightAmbient.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Night-Ambient.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/night.mp4',
   },
   {
@@ -31,13 +31,13 @@ const soundscapes = [
   {
     title: 'Forest Sounds Woodland Bird',
     description: 'Forest Sounds Woodland Ambience Bird Song',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/SubmergedOcean.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Submerged-Ocean.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/forestsound.mp4',
   },
   {
     title: 'Natural Water Environments',
     description: 'Submerged - Ocean Ambient Music Underwater Sounds',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/WaterfallSounds.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Waterfall-Sounds.wav',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/water.mp4',
   },
   // Add more soundscape objects...

@@ -13,31 +13,31 @@ const soundscapes = [
   {
     title: 'Forest and Woodland',
     description: 'Serene sounds of a mountain atmosphere',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Forest+Sounds+Woodland.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Forest-Sounds.mp3',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/woodland.mp4',
   },
   {
     title: 'Night and Calm',
     description: 'Serene sounds of a mountain atmosphere',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Night-Ambient.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Night-Ambient.mp3',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/night.mp4',
   },
   {
     title: 'Open Landscapes',
     description: 'Serene sounds of a mountain atmosphere',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/RelaxingMeadow.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Relaxing-Meadow.mp3',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/openlandscape.mp4',
   },
   {
     title: 'Forest Sounds Woodland Bird',
     description: 'Forest Sounds Woodland Ambience Bird Song',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Submerged-Ocean.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Submerged-Ocean.mp3',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/forestsound.mp4',
   },
   {
     title: 'Natural Water Environments',
     description: 'Submerged - Ocean Ambient Music Underwater Sounds',
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Waterfall-Sounds.wav',
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Waterfall-Sounds.mp3',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/water.mp4',
   },
   // Add more soundscape objects...

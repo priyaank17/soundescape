@@ -169,19 +169,6 @@ const PostListeningQuestionnaire = () => {
           ))}
         </div>
         <div className="question-card">
-          <label>Which type of audio did you find most effective?</label>
-          <select
-            name="mostEffectiveAudio"
-            value={postListeningData.mostEffectiveAudio}
-            onChange={handlePostListeningChange}
-          >
-            <option value="">Select one</option>
-            <option value="binaural">Binaural beats</option>
-            <option value="monaural">Monaural beats</option>
-            <option value="isochronic">Isochronic tones</option>
-          </select>
-        </div>
-        <div className="question-card">
           <label>Which auditory technique did you find most effective?</label>
           <select
             name="auditoryTechnique"

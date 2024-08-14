@@ -39,7 +39,7 @@ const Home = (props) => {
               Unlock Your Full Potential with Binaural, Monaural, and Isochronic Beats.
               Immerse yourself in soothing soundscapes designed to enhance relaxation, focus, and mental clarity.
               SoundEscape is dedicated to enhance your mental well-being through the power of sound.
-              Our specially curated beats and soundscapes are designed to help you relax, focus, and achieve mental clarity. Whether you're meditating, studying, or simply unwinding, UniRelax Beats provides the perfect auditory experience to support your needs
+              Our specially curated beats and soundscapes are designed to help you relax, focus, and achieve mental clarity. Whether you're meditating, studying, or simply unwinding,SoundEscape provides the perfect auditory experience to support your needs
             </span>
           </>
         }
@@ -57,16 +57,14 @@ const Home = (props) => {
       <div className="hero-container">
   <h2 className="thq-heading-2">About Me</h2>
   <p className="thq-body-large">
-    Welcome to SoundEscape. This interactive platform is part of my Master's project at MTU Cork School of Music, where I'm exploring the fascinating world of auditory stimulation techniques and environmental soundscapes.
+    Welcome to SoundEscape. 
+    This interactive platform is part of my Master's project at MTU Cork School of Music, where I'm exploring the fascinating world of auditory stimulation techniques and environmental soundscapes.
     My project aims to investigate the effects of various auditory stimuli on listeners' experiences and potentially their cognitive states. Through this website, I invite you to embark on a journey of sonic exploration and contribute to my research.
-    On the first page, you'll encounter different auditory techniques like binaural beats, monaural beats, and isochronic tones across various brainwave states. The second page offers immersive environmental soundscapes, allowing you to blend these with your chosen auditory technique. Finally, on the third page, you become the sound artist, creating your unique soundscape by selecting drone pads, ambient samples, and auditory stimulation techniques.
-    Your participation and feedback are invaluable to my research. By engaging with these sounds and sharing your experiences, you're contributing to our understanding of how different auditory stimuli affect perception and potentially cognitive function.
-    This project represents the intersection of music technology, cognitive science, and interactive design. It's my hope that this exploration will not only further academic understanding but also provide you with an engaging and potentially beneficial auditory experience.
-    Thank you for visiting and participating in this sonic adventure!
+    Your participation will help me gain valuable insights into the effects of auditory stimuli on mental well-being and cognitive performance.
+    Thank you for visiting this sonic adventure!
   </p>
   <p className="thq-body-large">
     Vivek Kumar<br/>
-    Master's Student<br/>
     MTU Cork School of Music
   </p>
 </div>

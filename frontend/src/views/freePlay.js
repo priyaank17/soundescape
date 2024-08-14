@@ -12,7 +12,7 @@ import './freePlay.css';
 
 
 const soundscapes = [
-  { title: 'Calm Drone', description: 'Calm drone sound', file: '/sounds/drones/dark pad 1 drone.wav'},
+  { title: 'Calm Drone', description: 'Calm drone sound', file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/drones/calm+drone.wav'},
   { title: 'Dark Pad 1 Drone', description: 'Dark pad drone sound', file: '/sounds/drones/dark pad 1 drone.wav' },
   { title: 'Dark Pad 2 Drone', description: 'Dark pad drone sound', file: '/sounds/drones/dark pad 2 drone.wav'},
   { title: 'Deep Drone', description: 'Deep drone sound', file: '/sounds/drones/deep drone.wav'},
@@ -43,7 +43,7 @@ const soundSamples = [
       {
         subCategory: 'Atmosphere',
         sounds: [
-          { title: 'Bushland Atmosphere', description: 'Bushland Atmosphere', file: '/sounds/ambient soundscape/nature sounds/atmosphere/Bushland Atmosphere.wav'},
+          { title: 'Bushland Atmosphere', description: 'Bushland Atmosphere', file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/ambient+soundscape/nature+sounds/atmosphere/Bushland+Atmosphere.wav'},
           { title: 'Mountain Atmosphere', description: 'Mountain Atmosphere', file: '/sounds/ambient soundscape/nature sounds/atmosphere/Mountain Atmosphere.wav'},
           { title: 'Wetland Atmosphere', description: 'Wetland Atmosphere', file: '/sounds/ambient soundscape/nature sounds/atmosphere/Wetland Atmosphere.wav' },
           { title: 'Woodland Atmosphere', description: 'Woodland Atmosphere', file: '/sounds/ambient soundscape/nature sounds/atmosphere/Woodland Atmosphere.wav'},

@@ -97,31 +97,31 @@ const simulationBeats = [
   { 
     title: 'Isochronic Alpha Waves', 
     description: 'Relaxation and calmness', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/AlphaIsochronicTone.wav', 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/ALPHA+ISOCHRONIC.wav', 
     video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
   },
   { 
     title: 'Isochronic Beta Waves', 
     description: 'Active thinking and focus', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/BetaIsochronicTone.wav', 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/BETA+ISOCHRONIC.wav', 
     video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
   },
   { 
     title: 'Isochronic Gamma Waves', 
     description: 'Peak focus and concentration', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/GammaIsochronicTone.wav', 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/GAMMA+ISOCHRONIC.wav', 
     video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
   },
   { 
     title: 'Isochronic Delta Waves', 
     description: 'Deep sleep and relaxation', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/DeltaIsochronicTone.wav', 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/DELTA+ISOCHRONIC.wav', 
     video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
   },
   { 
     title: 'Isochronic Theta Waves', 
     description: 'Meditation and creativity', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/ThetaIsochronicTone.wav', 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/THETA+ISOCHRONIC.wav', 
     video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
   },
 ];

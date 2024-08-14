@@ -45,16 +45,6 @@ const soundscapes = [
 
 const simulationBeats = [
   { 
-    title: 'Binaural Delta Waves', 
-    description: 'Deep sleep and relaxation.', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Binaural+beat+folder/1+hz.wav' 
-  },
-  { 
-    title: 'Binaural Theta Waves', 
-    description: 'Meditation and creativity.', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Binaural+beat+folder/4+hz.wav' 
-  },
-  { 
     title: 'Binaural Alpha Waves', 
     description: 'Relaxation and calmness.', 
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Binaural+beat+folder/10+hz.wav' 
@@ -68,6 +58,16 @@ const simulationBeats = [
     title: 'Binaural Gamma Waves', 
     description: 'Peak focus and concentration.', 
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Binaural+beat+folder/40+hz.wav' 
+  },
+  { 
+    title: 'Binaural Delta Waves', 
+    description: 'Deep sleep and relaxation.', 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Binaural+beat+folder/4+hz.wav' 
+  },
+  { 
+    title: 'Binaural Theta Waves', 
+    description: 'Meditation and creativity.', 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Binaural+beat+folder/4+hz.wav' 
   },
   { 
     title: 'Monoaural Alpha Waves', 
@@ -97,105 +97,90 @@ const simulationBeats = [
   { 
     title: 'Isochronic Alpha Waves', 
     description: 'Relaxation and calmness', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/ALPHA+ISOCHRONIC.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/ALPHA+ISOCHRONIC.wav',  
   },
   { 
     title: 'Isochronic Beta Waves', 
     description: 'Active thinking and focus', 
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/BETA+ISOCHRONIC.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
   },
   { 
     title: 'Isochronic Gamma Waves', 
     description: 'Peak focus and concentration', 
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/GAMMA+ISOCHRONIC.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
   },
   { 
     title: 'Isochronic Delta Waves', 
     description: 'Deep sleep and relaxation', 
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/DELTA+ISOCHRONIC.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
   },
   { 
     title: 'Isochronic Theta Waves', 
     description: 'Meditation and creativity', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/THETA+ISOCHRONIC.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats5.mp4' 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/THETA+ISOCHRONIC.wav',
   },
 ];
 
 const AmbientSoundscapes = () => {
-  const [currentFile, setCurrentFile] = useState(null);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [mix, setMix] = useState([]);
   const [showMix, setShowMix] = useState(false);
   const [expandedCard, setExpandedCard] = useState(null);
   const [showSimulationBeats, setShowSimulationBeats] = useState(false);
   const [audioInstances, setAudioInstances] = useState({});
+  const [playingFiles, setPlayingFiles] = useState({});
+  const [showPopup, setShowPopup] = useState(false); // State to control the popup visibility
 
   useEffect(() => {
-    // Clean up audio instances when component unmounts
+    // Clean up audio instances when the component unmounts
     return () => {
-      Object.values(audioInstances).forEach(audio => audio.pause());
+      Object.values(audioInstances).forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0; // Reset to start
+      });
     };
   }, [audioInstances]);
 
   const handlePlayPause = (file) => {
-    if (currentFile !== file) {
-      // Stop the currently playing audio (if any)
-      if (audioInstances[currentFile]) {
-        audioInstances[currentFile].pause();
-      }
+    const isPlaying = playingFiles[file];
 
-      // Create a new audio instance for the selected file
+    // If the audio instance doesn't exist, create it
+    if (!audioInstances[file]) {
       const newAudio = new Audio(file);
+      newAudio.addEventListener('ended', () => setPlayingFiles(prev => ({ ...prev, [file]: false })));
+      setAudioInstances(prev => ({ ...prev, [file]: newAudio }));
       newAudio.play();
-      setCurrentFile(file);
-      setIsPlaying(true);
-
-      // Update the audio instances with the new one
-      setAudioInstances({ ...audioInstances, [file]: newAudio });
+      setPlayingFiles(prev => ({ ...prev, [file]: true }));
     } else {
-      // If the file is already playing, toggle the play/pause state
+      // If the audio instance exists, toggle play/pause
       if (isPlaying) {
         audioInstances[file].pause();
+        setPlayingFiles(prev => ({ ...prev, [file]: false }));
       } else {
         audioInstances[file].play();
+        setPlayingFiles(prev => ({ ...prev, [file]: true }));
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
   const handleAddToMix = (file) => {
     if (!mix.includes(file)) {
       setMix([...mix, file]);
+      showPopupMessage(); // Show popup when a track is added
     }
   };
 
   const handleRemoveFromMix = (file) => {
     if (audioInstances[file]) {
       audioInstances[file].pause();
+      audioInstances[file].currentTime = 0;
     }
     setMix(mix.filter((track) => track !== file));
+    setPlayingFiles(prev => ({ ...prev, [file]: false }));
   };
 
-  const handlePlayMix = () => {
-    if (isPlaying) {
-      Object.values(audioInstances).forEach(audio => audio.pause());
-      setIsPlaying(false);
-    } else {
-      mix.forEach(file => {
-        if (audioInstances[file]) {
-          audioInstances[file].play();
-        } else {
-          const newAudio = new Audio(file);
-          newAudio.play();
-          setAudioInstances(prev => ({ ...prev, [file]: newAudio }));
-        }
-      });
-      setIsPlaying(true);
+  const handleVolumeChange = (file, value) => {
+    if (audioInstances[file]) {
+      audioInstances[file].volume = value;
     }
   };
 
@@ -205,6 +190,24 @@ const AmbientSoundscapes = () => {
 
   const toggleSimulationBeats = () => {
     setShowSimulationBeats(!showSimulationBeats);
+  };
+
+  const handleCloseMixView = () => {
+    setShowMix(false);
+    mix.forEach(file => {
+      if (audioInstances[file]) {
+        audioInstances[file].pause();
+        audioInstances[file].currentTime = 0;
+      }
+    });
+    setPlayingFiles({});
+  };
+
+  const showPopupMessage = () => {
+    setShowPopup(true);
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 2000); // Popup message will be visible for 2 seconds
   };
 
   return (
@@ -222,10 +225,15 @@ const AmbientSoundscapes = () => {
       <button className="view-mix-button" onClick={() => setShowMix(!showMix)}>
         {showMix ? 'Hide Mix' : 'View Mix'}
       </button>
+      {showPopup && (
+        <div className="popup-message">
+          Track added to mix! Click 'View Mix' to see your selection.
+        </div>
+      )}
       {showMix && (
         <div className="mix-overlay">
           <div className="mix-container">
-            <button className="close-mix-button" onClick={() => setShowMix(false)}>
+            <button className="close-mix-button" onClick={handleCloseMixView}>
               <FaTimes />
             </button>
             {mix.map((file, index) => (
@@ -236,15 +244,19 @@ const AmbientSoundscapes = () => {
                     <FaTrashAlt />
                   </button>
                   <button className="action-button" onClick={() => handlePlayPause(file)}>
-                    {currentFile === file && isPlaying ? <FaPause /> : <FaPlay />}
+                    {playingFiles[file] ? <FaPause /> : <FaPlay />}
                   </button>
-                  <input type="range" min="0" max="1" step="0.01" className="volume-slider" />
+                  <input
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    className="volume-slider"
+                    onChange={(e) => handleVolumeChange(file, e.target.value)}
+                  />
                 </div>
               </div>
             ))}
-            <button className="action-button play-mix-button" onClick={handlePlayMix}>
-              {isPlaying ? 'Stop Mix' : 'Play Mix'}
-            </button>
             <button className="action-button add-simulation-button" onClick={toggleSimulationBeats}>
               {showSimulationBeats ? 'Hide Simulation Beats' : 'Add Auditory Simulation Beats'}
             </button>
@@ -255,7 +267,7 @@ const AmbientSoundscapes = () => {
                     <span>{beat.title}</span>
                     <div className="mix-actions">
                       <button className="action-button" onClick={() => handlePlayPause(beat.file)}>
-                        {currentFile === beat.file && isPlaying ? <FaPause /> : <FaPlay />}
+                        {playingFiles[beat.file] ? <FaPause /> : <FaPlay />}
                       </button>
                       <button className="action-button" onClick={() => handleAddToMix(beat.file)}>
                         <FaPlus />
@@ -293,7 +305,7 @@ const AmbientSoundscapes = () => {
               </div>
               <div className="soundscape-actions">
                 <button className="action-button" onClick={() => handlePlayPause(sound.file)}>
-                  {currentFile === sound.file && isPlaying ? <FaPause /> : <FaPlay />}
+                  {playingFiles[sound.file] ? <FaPause /> : <FaPlay />}
                 </button>
                 <button className="action-button" onClick={() => handleAddToMix(sound.file)}>
                   <FaPlus />

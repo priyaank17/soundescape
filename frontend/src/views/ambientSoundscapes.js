@@ -32,13 +32,13 @@ const soundscapes = [
     title: 'Submerged Ocean Environment',
     description: 'Submerged Ocean Ambience Sounds',
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Submerged-Ocean.mp3',
-    gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/water.mp4',
+    gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/ocean.mp4',
   },
   {
     title: 'Natural Water Environments',
     description: 'Submerged - Ocean Ambient Music Underwater Sounds',
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Waterfall-Sounds.mp3',
-    gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/rain.mp4',
+    gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/water.mp4',
   },
   // Add more soundscape objects...
 ];

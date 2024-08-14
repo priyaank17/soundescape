@@ -6,39 +6,39 @@ import { Link} from 'react-router-dom';
 const soundscapes = [
   {
     title: 'Weather and Atmospheric',
-    description: 'A calm and peaceful atmosphere of bushland',
+    description: 'Gentle rainfall on a roof,Thunderstorm,⁠Mountain wind',
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/calmsound.mp3',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/weather.mp4',
   },
   {
     title: 'Forest and Woodland',
-    description: 'Serene sounds of a mountain atmosphere',
+    description: 'Serene sounds of Forest and Woodland',
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Forest-Sounds.mp3',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/woodland.mp4',
   },
   {
     title: 'Night and Calm',
-    description: 'Serene sounds of a mountain atmosphere',
+    description: 'Nocturnal sounds (crickets, owls)',
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Night-Ambient.mp3',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/night.mp4',
   },
   {
     title: 'Open Landscapes',
-    description: 'Serene sounds of a mountain atmosphere',
+    description: 'Meadow (with light breeze and bird sounds)',
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Relaxing-Meadow.mp3',
     gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/openlandscape.mp4',
   },
   {
-    title: 'Forest Sounds Woodland Bird',
-    description: 'Forest Sounds Woodland Ambience Bird Song',
+    title: 'Submerged Ocean Environment',
+    description: 'Submerged Ocean Ambience Sounds',
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Submerged-Ocean.mp3',
-    gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/forestsound.mp4',
+    gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/water.mp4',
   },
   {
     title: 'Natural Water Environments',
     description: 'Submerged - Ocean Ambient Music Underwater Sounds',
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/sounsdcapes/Waterfall-Sounds.mp3',
-    gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/water.mp4',
+    gif: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/rain.mp4',
   },
   // Add more soundscape objects...
 ];

@@ -7,7 +7,7 @@ const PostSoundscapeQuestionnaire = () => {
     { title: 'Forest and Woodland' },
     { title: 'Night and Calm' },
     { title: 'Open Landscapes' },
-    { title: 'Forest Sounds Woodland Bird' },
+    { title: 'Submerged Ocean Environment' },
     { title: 'Natural Water Environments' },
     // Add more soundscape objects...
   ];

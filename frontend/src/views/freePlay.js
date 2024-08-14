@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaPlay, FaPause, FaTrashAlt, FaPlus, FaMinus, FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import { DndProvider, useDrag, useDrop } from 'react-dnd';
+import { DndProvider} from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import WaveSurfer from 'wavesurfer.js';
 import { Howl } from 'howler';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import './freePlay.css';
 
 
@@ -216,8 +215,6 @@ const FreePlay = () => {
   const audioContext = useRef(null);
   const audioRef = useRef(null);
   const audioRefs = useRef([]); // Store individual audio elements and nodes
-  const [isCategoryCollapsed, setIsCategoryCollapsed] = useState({});
-  const [isSubCategoryCollapsed, setIsSubCategoryCollapsed] = useState({});
 
   useEffect(() => {
     return () => {
@@ -228,23 +225,12 @@ const FreePlay = () => {
     };
   }, [mix]);
 
-  const toggleCategoryCollapse = (categoryIndex) => {
-    setIsCategoryCollapsed((prevState) => ({
-      ...prevState,
-      [categoryIndex]: !prevState[categoryIndex],
-    }));
-  };
-
-  const toggleSubCategoryCollapse = (subCategoryIndex) => {
-    setIsSubCategoryCollapsed((prevState) => ({
-      ...prevState,
-      [subCategoryIndex]: !prevState[subCategoryIndex],
-    }));
-  };
-
   const initializeAudioContext = () => {
     if (!audioContext.current) {
       audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioContext.current.state === 'suspended') {
+      audioContext.current.resume();
     }
   };
 
@@ -286,6 +272,8 @@ const FreePlay = () => {
       gainNode.connect(pannerNode);
       pannerNode.connect(convolverNode);
       convolverNode.connect(audioContext.current.destination);
+
+      return audio; // Return the audio element for further control
     } catch (error) {
       console.error('Error creating audio nodes:', error);
       throw new Error('Audio node creation failed');
@@ -317,15 +305,19 @@ const FreePlay = () => {
     try {
       if (!isMixPlaying) {
         for (const [index, track] of mix.entries()) {
-          await createAudioNodes(index, track.file);
-          audioRefs.current[index].audio.play();
+          const audio = await createAudioNodes(index, track.file);
+          audio.play(); // Play the track
           track.isPlaying = true;
         }
         setIsMixPlaying(true);
       } else {
         mix.forEach((track, index) => {
-          audioRefs.current[index].audio.pause();
-          track.isPlaying = false;
+          const { audio } = audioRefs.current[index];
+          if (audio) {
+            audio.pause();
+            audio.currentTime = 0; // Reset to start
+            track.isPlaying = false;
+          }
         });
         setIsMixPlaying(false);
       }
@@ -484,7 +476,7 @@ const FreePlay = () => {
     <DndProvider backend={HTML5Backend}>
       <div className="free-play-page">
         <video className="background-video" autoPlay loop muted>
-          <source src="/videos/beats8.mp4" type="video/mp4" />
+          <source src="https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/waveform.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="header">
@@ -604,7 +596,7 @@ const FreePlay = () => {
                       <span className="slider"></span>
                     </label>
                   </div>
-  
+
                   {/* Volume Control with + and - Icons */}
                   <div className="track-controls">
                     <label>Volume</label>
@@ -620,7 +612,7 @@ const FreePlay = () => {
                     />
                     <FaPlus onClick={() => increaseVolume(index)} />
                   </div>
-  
+
                   {/* Panning Control with Left, Center, Right Labels */}
                   <div className="track-controls">
                     <label>Panning</label>
@@ -652,7 +644,6 @@ const FreePlay = () => {
                     <FaTrashAlt />
                   </button>
                 </div>
-                <div className="waveform" id={`waveform-${index}`}></div>
               </div>
             ))}
           </div>
@@ -670,5 +661,4 @@ const FreePlay = () => {
     </DndProvider>
   );
 }
-
-export default FreePlay;
+  export default FreePlay;

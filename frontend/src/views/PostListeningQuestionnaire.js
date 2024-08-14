@@ -3,6 +3,8 @@ import './postListeningQuestionnaire.css';
 
 const PostListeningQuestionnaire = () => {
   const [postListeningData, setPostListeningData] = useState({
+    name: '',
+    email: '',
     relaxationLevel: '',
     mentalClarity: '',
     overallMood: '',
@@ -12,7 +14,8 @@ const PostListeningQuestionnaire = () => {
     auditoryTechnique: '',
     brainwaveState: '',
     relaxationAfterListening: '',
-    effectsExperienced: []
+    effectsExperienced: [],
+    otherEffect: ''
   });
 
   const handlePostListeningChange = (event) => {
@@ -70,12 +73,31 @@ const PostListeningQuestionnaire = () => {
     <div className="post-listening-container">
       <h2>Post-Listening Questionnaire</h2>
       <form className="questionnaire-form" onSubmit={submitPostListeningForm}>
-        {/* Existing questions */}
+        <div className="question-card">
+          <label>Name:</label>
+          <input
+            type="text"
+            name="name"
+            value={postListeningData.name}
+            onChange={handlePostListeningChange}
+            required
+          />
+        </div>
+        <div className="question-card">
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={postListeningData.email}
+            onChange={handlePostListeningChange}
+            required
+          />
+        </div>
         <div className="question-card">
           <label>Current relaxation level:</label>
           {[1, 2, 3, 4, 5].map(num => (
             <label key={num}>
-              {num}
+              {num} - {["Very Low", "Low", "Moderate", "High", "Very High"][num - 1]}
               <input
                 type="radio"
                 name="relaxationLevel"
@@ -90,7 +112,7 @@ const PostListeningQuestionnaire = () => {
           <label>Mental clarity:</label>
           {[1, 2, 3, 4, 5].map(num => (
             <label key={num}>
-              {num}
+              {num} - {["Very Low", "Low", "Moderate", "High", "Very High"][num - 1]}
               <input
                 type="radio"
                 name="mentalClarity"
@@ -105,7 +127,7 @@ const PostListeningQuestionnaire = () => {
           <label>Overall mood:</label>
           {[1, 2, 3, 4, 5].map(num => (
             <label key={num}>
-              {num}
+              {num} - {["Very Bad", "Bad", "Neutral", "Good", "Very Good"][num - 1]}
               <input
                 type="radio"
                 name="overallMood"
@@ -120,7 +142,7 @@ const PostListeningQuestionnaire = () => {
           <label>Physical comfort:</label>
           {[1, 2, 3, 4, 5].map(num => (
             <label key={num}>
-              {num}
+              {num} - {["Very Uncomfortable", "Uncomfortable", "Neutral", "Comfortable", "Very Comfortable"][num - 1]}
               <input
                 type="radio"
                 name="physicalComfort"
@@ -135,7 +157,7 @@ const PostListeningQuestionnaire = () => {
           <label>Effectiveness of the audio:</label>
           {[1, 2, 3, 4, 5].map(num => (
             <label key={num}>
-              {num}
+              {num} - {["Very Ineffective", "Ineffective", "Neutral", "Effective", "Very Effective"][num - 1]}
               <input
                 type="radio"
                 name="audioEffectiveness"
@@ -159,8 +181,6 @@ const PostListeningQuestionnaire = () => {
             <option value="isochronic">Isochronic tones</option>
           </select>
         </div>
-        
-        {/* New questions */}
         <div className="question-card">
           <label>Which auditory technique did you find most effective?</label>
           <select
@@ -226,8 +246,8 @@ const PostListeningQuestionnaire = () => {
                 checked={postListeningData.effectsExperienced.includes('reducedStress')}
               />
               Reduced stress
-            </label>
-            <label>
+              </label>
+              <label>
               <input
                 type="checkbox"
                 name="effectsExperienced"
@@ -272,7 +292,9 @@ const PostListeningQuestionnaire = () => {
                 type="text"
                 name="otherEffect"
                 placeholder="Please specify"
+                value={postListeningData.otherEffect}
                 onChange={handlePostListeningChange}
+                className="other-effect-input"
               />
             )}
           </div>
@@ -281,6 +303,6 @@ const PostListeningQuestionnaire = () => {
       </form>
     </div>
   );
-};
+}
 
 export default PostListeningQuestionnaire;

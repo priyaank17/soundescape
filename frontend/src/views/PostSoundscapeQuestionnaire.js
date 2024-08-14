@@ -2,12 +2,23 @@ import React, { useState, useEffect } from 'react';
 import './postSoundscapeQuestionnaire.css';
 
 const PostSoundscapeQuestionnaire = () => {
+  const soundscapes = [
+    { title: 'Weather and Atmospheric' },
+    { title: 'Forest and Woodland' },
+    { title: 'Night and Calm' },
+    { title: 'Open Landscapes' },
+    { title: 'Forest Sounds Woodland Bird' },
+    { title: 'Natural Water Environments' },
+    // Add more soundscape objects...
+  ];
+
   const [postSoundscapeData, setPostSoundscapeData] = useState({
     favoriteSoundscape: '',
     includedTechnique: '',
     chosenTechnique: '',
-    immersionLevel: '',
-    notableExperiences: ''
+    immersionLevel: '1',
+    notableExperiences: '',
+    otherSoundscape: ''
   });
 
   useEffect(() => {
@@ -65,6 +76,29 @@ const PostSoundscapeQuestionnaire = () => {
     <div className="post-soundscape-container">
       <h2>Post-Soundscape Listening Questionnaire</h2>
       <form className="questionnaire-form" onSubmit={submitPostSoundscapeForm}>
+        {/* Name input */}
+  <div className="question-card">
+    <label>Name:</label>
+    <input
+      type="text"
+      name="userName"
+      value={postSoundscapeData.userName || ''}
+      onChange={handlePostSoundscapeChange}
+      placeholder="Enter your name"
+    />
+  </div>
+  
+  {/* Email input */}
+  <div className="question-card">
+    <label>Email:</label>
+    <input
+      type="email"
+      name="userEmail"
+      value={postSoundscapeData.userEmail || ''}
+      onChange={handlePostSoundscapeChange}
+      placeholder="Enter your email address"
+    />
+  </div>
         <div className="question-card">
           <label>Which environmental soundscape did you find most enjoyable?</label>
           <select
@@ -73,11 +107,9 @@ const PostSoundscapeQuestionnaire = () => {
             onChange={handlePostSoundscapeChange}
           >
             <option value="">Select one</option>
-            <option value="forest">Forest</option>
-            <option value="ocean">Ocean</option>
-            <option value="rainforest">Rainforest</option>
-            <option value="mountainStream">Mountain stream</option>
-            <option value="urbanPark">Urban park</option>
+            {soundscapes.map((soundscape, index) => (
+              <option key={index} value={soundscape.title}>{soundscape.title}</option>
+            ))}
             <option value="other">Other (please specify)</option>
           </select>
           {postSoundscapeData.favoriteSoundscape === 'other' && (
@@ -85,7 +117,9 @@ const PostSoundscapeQuestionnaire = () => {
               type="text"
               name="otherSoundscape"
               placeholder="Please specify"
+              value={postSoundscapeData.otherSoundscape}
               onChange={handlePostSoundscapeChange}
+              className="other-soundscape-input"
             />
           )}
         </div>

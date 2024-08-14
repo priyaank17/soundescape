@@ -8,7 +8,7 @@ const Home = (props) => {
   return (
     <div className="home-container">
       <video className="background-video" autoPlay loop muted>
-        <source src="/videos/beats8.mp4" type="video/mp4" />
+        <source src="https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/theta.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

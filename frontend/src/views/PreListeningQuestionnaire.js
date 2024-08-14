@@ -3,11 +3,14 @@ import './preListeningQuestionnaire.css';
 
 const PreListeningQuestionnaire = () => {
   const [preListeningData, setPreListeningData] = useState({
+    name: '',
+    email: '',
     stressLevel: '',
     mentalAlertness: '',
     overallMood: '',
     physicalComfort: '',
-    sessionExpectation: ''
+    sessionExpectation: '',
+    otherExpectation: ''
   });
 
   const handlePreListeningChange = (event) => {
@@ -15,6 +18,13 @@ const PreListeningQuestionnaire = () => {
     setPreListeningData(prevData => ({
       ...prevData,
       [name]: value
+    }));
+  };
+
+  const handleOtherExpectationChange = (event) => {
+    setPreListeningData(prevData => ({
+      ...prevData,
+      otherExpectation: event.target.value
     }));
   };
 
@@ -53,10 +63,30 @@ const PreListeningQuestionnaire = () => {
       <h2>Pre-Listening Questionnaire</h2>
       <form className="questionnaire-form" onSubmit={submitPreListeningForm}>
         <div className="question-card">
+          <label>Name:</label>
+          <input
+            type="text"
+            name="name"
+            value={preListeningData.name}
+            onChange={handlePreListeningChange}
+            required
+          />
+        </div>
+        <div className="question-card">
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={preListeningData.email}
+            onChange={handlePreListeningChange}
+            required
+          />
+        </div>
+        <div className="question-card">
           <label>Current stress level:</label>
           {[1, 2, 3, 4, 5].map(num => (
             <label key={num}>
-              {num}
+              {num} - {["Very Low", "Low", "Moderate", "High", "Very High"][num - 1]}
               <input
                 type="radio"
                 name="stressLevel"
@@ -71,7 +101,7 @@ const PreListeningQuestionnaire = () => {
           <label>Mental alertness:</label>
           {[1, 2, 3, 4, 5].map(num => (
             <label key={num}>
-              {num}
+              {num} - {["Very Low", "Low", "Moderate", "High", "Very High"][num - 1]}
               <input
                 type="radio"
                 name="mentalAlertness"
@@ -86,7 +116,7 @@ const PreListeningQuestionnaire = () => {
           <label>Overall mood:</label>
           {[1, 2, 3, 4, 5].map(num => (
             <label key={num}>
-              {num}
+              {num} - {["Very Bad", "Bad", "Neutral", "Good", "Very Good"][num - 1]}
               <input
                 type="radio"
                 name="overallMood"
@@ -101,7 +131,7 @@ const PreListeningQuestionnaire = () => {
           <label>Physical comfort:</label>
           {[1, 2, 3, 4, 5].map(num => (
             <label key={num}>
-              {num}
+              {num} - {["Very Uncomfortable", "Uncomfortable", "Neutral", "Comfortable", "Very Comfortable"][num - 1]}
               <input
                 type="radio"
                 name="physicalComfort"
@@ -116,7 +146,7 @@ const PreListeningQuestionnaire = () => {
           <label>Expectation for the session:</label>
           {[1, 2, 3, 4, 5].map(num => (
             <label key={num}>
-              {num}
+              {num} - {["Very Low", "Low", "Moderate", "High", "Very High"][num - 1]}
               <input
                 type="radio"
                 name="sessionExpectation"
@@ -126,6 +156,25 @@ const PreListeningQuestionnaire = () => {
               />
             </label>
           ))}
+          <label>
+            Others (specify):
+            <input
+              type="radio"
+              name="sessionExpectation"
+              value="other"
+              onChange={handlePreListeningChange}
+              checked={preListeningData.sessionExpectation === "other"}
+            />
+          </label>
+          {preListeningData.sessionExpectation === "other" && (
+            <textarea
+              name="otherExpectation"
+              value={preListeningData.otherExpectation}
+              onChange={handleOtherExpectationChange}
+              placeholder="Please specify your expectation..."
+              className="other-textarea"
+            />
+          )}
         </div>
         <button type="submit" className="btn-primary">Submit</button>
       </form>

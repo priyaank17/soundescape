@@ -17,28 +17,28 @@ const binauralBeats = [
     description: 'Meditation and creativity', 
     range: [4, 8], 
     filePrefix: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Binaural+beat+folder/', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats4.mp4' 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/theta.mp4' 
   },
   { 
     title: 'Alpha Waves', 
     description: 'Relaxation and calmness', 
     range: [8, 14], 
     filePrefix: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Binaural+beat+folder/', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats4.mp4' 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/alpha.mp4' 
   },
   { 
     title: 'Beta Waves', 
     description: 'Active thinking and focus', 
     range: [14, 30], 
     filePrefix: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Binaural+beat+folder/', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats.mp4' 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beta.mp4' 
   },
   { 
     title: 'Gamma Waves', 
     description: 'Peak focus and concentration', 
     range: [30, 40], 
     filePrefix: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/Binaural+beat+folder/', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats3.mp4' 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/gamma.mp4' 
   },
 ];
 
@@ -47,31 +47,31 @@ const monauralBeats = [
     title: 'Alpha Waves', 
     description: 'Relaxation and calmness', 
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/monaural+brainwave+states/alpha+11hz+monaural+beat.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/brainwaves.mp4' 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/alpha.mp4' 
   },
   { 
     title: 'Beta Waves', 
     description: 'Active thinking and focus', 
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/monaural+brainwave+states/beta+21hz+monaural+beat.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats4.mp4' 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beta.mp4' 
   },
   { 
     title: 'Gamma Waves', 
     description: 'Peak focus and concentration', 
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/monaural+brainwave+states/gamma+40hz+monaural+beat.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats3.mp4' 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/gamma.mp4' 
   },
   { 
     title: 'Delta Waves', 
     description: 'Deep sleep and relaxation', 
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/monaural+brainwave+states/delta+2hz+monaural+beat.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/waveform.mp4' 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/brainwaves.mp4' 
   },
   { 
     title: 'Theta Waves', 
     description: 'Meditation and creativity', 
     file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/monaural+brainwave+states/theta+4hz+monaural+beat.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats4.mp4' 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/theta.mp4' 
   },
 ];
 
@@ -79,32 +79,32 @@ const isochronicBeats = [
   { 
     title: 'Alpha Waves', 
     description: 'Relaxation and calmness', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/AlphaIsochronicTone.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/brainwaves.mp4' 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/ALPHA+ISOCHRONIC.wav', 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/alpha.mp4' 
   },
   { 
     title: 'Beta Waves', 
     description: 'Active thinking and focus', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/BetaIsochronicTone.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats4.mp4' 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/BETA+ISOCHRONIC.wav', 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beta.mp4' 
   },
   { 
     title: 'Gamma Waves', 
     description: 'Peak focus and concentration', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/GammaIsochronicTone.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats4.mp4' 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/GAMMA+ISOCHRONIC.wav', 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/gamma.mp4' 
   },
   { 
     title: 'Delta Waves', 
     description: 'Deep sleep and relaxation', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/DeltaIsochronicTone.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats.mp4' 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/DELTA+ISOCHRONIC.wav', 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/brainwaves.mp4' 
   },
   { 
     title: 'Theta Waves', 
     description: 'Meditation and creativity', 
-    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/ThetaIsochronicTone.wav', 
-    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/beats3.mp4' 
+    file: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/sounds/THETA+ISOCHRONIC.wav', 
+    video: 'https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/theta.mp4' 
   },
 ];
 
@@ -253,7 +253,7 @@ function ControlledEnvironmentTest() {
         <title>Controlled Environment Test - Unirelax Beats</title>
       </Helmet>
       <video className="background-video" autoPlay loop muted>
-        <source src="/videos/beats8.mp4" type="video/mp4" />
+        <source src="https://soundescape.s3.eu-north-1.amazonaws.com/public/videos/theta.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="hero-container">
